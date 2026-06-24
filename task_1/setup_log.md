@@ -25,7 +25,7 @@ venv\Scripts\activate
 pip install requests
 ```
 
-## Generate Requiremnets File
+## Generate Requirements File
 ```bash
 pip freeze > task_1/requirements.txt
 ```

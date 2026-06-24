@@ -6,23 +6,28 @@ Demonstartes basic GitHub usage,Python virtual environment setup, dependency man
 ## Setup Instructions
 
 ### Clone the Repository
-'''bash
+```bash
 git clone https://github.com/TanTheta017/Synergy_TP.git
-cd Synergy_TP '''
+cd Synergy_TP 
+```
 
 ### Create VE
-'''bash
-python -m venv venv'''
+```bash
+python -m venv venv
+```
 
 ### Activating VE
-'''bash
-venv\Scripts\activate'''
+```bash
+venv\Scripts\activate
+```
 
 ### Install Requirements
-'''bash
-pip install -r task_1/requiremnets.txt'''
+```bash
+pip install -r task_1/requiremnets.txt
+```
 
 ### Run the python Script
-''' bash
-python task_1/src.hello.py'''
+```bash
+python task_1/src.hello.py
+```
 

@@ -1,6 +1,6 @@
 # Setup Log
 ## Repo setup
-'''bash
+```bash
 git clone
 https://github.com/TanTheta017/Synergy_TP.git
 
@@ -10,24 +10,29 @@ mkdir task_1
 mkdir task_2
 
 mkdir task_1/src
-mkdir task_1/data'''
+mkdir task_1/data
+```
 
 ## VE
-'''bash
+```bash
 python -m venv venv
 
-venv\Scripts\activate'''
+venv\Scripts\activate
+```
 
 ## Package Installation
-'''bash
-pip install requests'''
+```bash
+pip install requests
+```
 
 ## Generate Requiremnets File
-'''bash
-pip freeze > task_1/requirements.txt'''
+```bash
+pip freeze > task_1/requirements.txt
+```
 
 ## Git Commands
-''' bash
+``` bash
 git add
 git commit -m "Completed task 1"
-git push'''
+git push
+```

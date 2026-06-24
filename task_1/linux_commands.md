@@ -285,6 +285,5 @@ chmod +x sample_test.txt
 Changes file permissions.
 
 **Output Observed**
-```text
-Permissions updated successfully
+```No output is also ok.
 ```

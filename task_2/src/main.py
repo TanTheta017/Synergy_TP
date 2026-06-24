@@ -1,48 +1,33 @@
 import sys
-
-from analyzer import (
-    read_submissions,
-    get_submitted_students,
-    calculate_average_score,
-    get_domain_wise_average,
-    get_missing_submissions,
-    write_summary,
-)
+from analyzer import *
 
 def main():
 
     if len(sys.argv) != 3:
-        print("Usage:")
-        print("python main.py input.csv output.json")
+        print("Usage: python main.py input.csv output.json")
         return
 
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-
-    data = read_submissions(input_file)
+    data = read_submissions(sys.argv[1])
 
     submitted = get_submitted_students(data)
-
-    highest = max(submitted, key=lambda x: int(x["score"]))
-    lowest = min(submitted, key=lambda x: int(x["score"]))
 
     summary = {
         "total_students": len(data),
         "submitted_students": len(submitted),
         "missing_submissions": len(get_missing_submissions(data)),
         "average_score": calculate_average_score(data),
-        "highest_scorer": highest["name"],
-        "lowest_scorer": lowest["name"],
+        "highest_scorer": max(submitted, key=lambda x: int(x["score"]))["name"],
+        "lowest_scorer": min(submitted, key=lambda x: int(x["score"]))["name"],
         "domain_wise_average": get_domain_wise_average(data),
         "not_submitted": get_missing_submissions(data),
         "below_five": [
-            row["name"]
-            for row in submitted
-            if int(row["score"]) < 5
+            student["name"]
+            for student in submitted
+            if int(student["score"]) < 5
         ]
     }
 
-    write_summary(summary, output_file)
+    write_summary(summary, sys.argv[2])
 
     print("Summary written!")
 
